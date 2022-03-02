@@ -34,7 +34,7 @@
              <li class="">
                 <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-link" do %>
                   <span class="fas fa-sign-out-alt" aria-hidden="true"></span>
-                  <strong>Log out</strong>
+                  <strong>logout</strong>
                 <% end %>
               </li>
           <% else %>
@@ -57,9 +57,9 @@
                <% end %>
              </li>
              <li class="">
-               <%= link_to new_user_session_path, class:"btn btn-link" do %>
+               <%= link_to user_session_path, class:"btn btn-link" do %>
                <span class="fas fa-sign-in-alt" aria-hidden="true"></span>
-               <strong>Log in</strong>
+               <strong>login</strong>
              <% end %>
              </li>
           <% end %>

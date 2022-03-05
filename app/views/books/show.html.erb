@@ -38,18 +38,22 @@
           <% end %>
         </tr>
       </table>
-        <tr>コメント件数：<%= @book.book_comments.count %></tr>
-          <% @book.book_comments.each do |book_comment| %>
-        <td><%= image_tag book_comment.user.get_profile_image(100,100) %></td>
-        <%= book_comment.user.name %>
-        <%= book_comment.created_at.strftime('%Y/%m/%d') %><%= book_comment.comment %>
-        <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
-          <% end %>
 
-      <%= form_with model: [@book, @book_comment] do |f| %>
-       <%= f.text_area :comment,placeholder: "コメントをここに" %>
-       <%= f.submit "送信する" %>
-      <% end %>
+
+       <%= render "book_comments/index", book: @book %>
+      <%= render "book_comments/form", book: @book, book_comment: @book_comment %>
+      <!--  <tr>コメント件数：<%#= @book.book_comments.count %></tr>-->
+      <!--    <%# @book.book_comments.each do |book_comment| %>-->
+      <!--  <td><%#= image_tag book_comment.user.get_profile_image(100,100) %></td>-->
+      <!--  <%#= book_comment.user.name %>-->
+      <!--  <%#= book_comment.created_at.strftime('%Y/%m/%d') %><%#= book_comment.comment %>-->
+      <!--  <td><%#= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>-->
+      <!--    <%# end %>-->
+
+      <!--<%#= form_with model: [@book, @book_comment] do |f| %>-->
+      <!-- <%#= f.text_area :comment,placeholder: "コメントをここに" %>-->
+      <!-- <%#= f.submit "送信する" %>-->
+      <!--<%# end %>-->
     </div>
   </div>
 </div>

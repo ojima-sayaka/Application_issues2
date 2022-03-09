@@ -22,6 +22,8 @@
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
           <% end %>
         </tr>
+       <%= render "book_comments/index", book: @book %>
+       <%= render "book_comments/form", book: @book, book_comment: @book_comment %>
       </table>
     </div>
   </div>
